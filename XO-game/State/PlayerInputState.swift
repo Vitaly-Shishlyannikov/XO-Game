@@ -13,12 +13,16 @@ public class PlayerInputState: GameState {
     public private(set) var isCompleted = false
     
     public let player: Player
+    
     private(set) weak var gameViewController: GameViewController?
     private(set) weak var gameBoard: Gameboard?
     private(set) weak var gameBoardView: GameboardView?
     
-    init(player: Player, gameViewController: GameViewController, gameBoard: Gameboard, gameBoardView: GameboardView) {
+    public let markViewPrototype: MarkView
+    
+    init(player: Player, markViewPrototype: MarkView, gameViewController: GameViewController, gameBoard: Gameboard, gameBoardView: GameboardView) {
         self.player = player
+        self.markViewPrototype = markViewPrototype
         self.gameViewController = gameViewController
         self.gameBoard = gameBoard
         self.gameBoardView = gameBoardView
@@ -41,16 +45,8 @@ public class PlayerInputState: GameState {
               gameBoardView.canPlaceMarkView(at: position)
             else {return}
         
-        let markView: MarkView
-        switch self.player {
-        case .first:
-            markView = XView()
-        case .second:
-            markView = OView()
-        }
-        
         self.gameBoard?.setPlayer(self.player, at: position)
-        self.gameBoardView?.placeMarkView(markView, at: position)
+        self.gameBoardView?.placeMarkView(self.markViewPrototype.copy(), at: position)
         self.isCompleted = true
     }
 }
