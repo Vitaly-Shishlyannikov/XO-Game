@@ -24,6 +24,8 @@ public class GamePeacefulEndedState: GameState {
 
         self.gameViewController?.firstPlayerTurnLabel.isHidden = true
         self.gameViewController?.secondPlayerTurnLabel.isHidden = true
+        
+        log(.gameFinishedWithPeace())
     }
     
     public func addMark(at position: GameboardPosition) { }
