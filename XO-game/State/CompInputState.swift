@@ -34,8 +34,11 @@ public class CompInputState: GameState {
         self.gameViewController?.compTurnLabel.isHidden = false
         self.gameViewController?.winnerLabel.isHidden = true
         
-        while isCompleted == false {
-            self.gameBoardView?.compMadeRandomMove()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            while self.isCompleted == false {
+                self.gameBoardView?.compMadeRandomMove()
+            }
         }
     }
     
