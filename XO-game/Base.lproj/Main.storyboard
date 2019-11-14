@@ -43,15 +43,29 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="w24-df-uhY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfX-R0-hRL">
+                                <rect key="frame" x="0.0" y="236" width="375" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Игра вслепую">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playWIthHumanBtnPressed:" destination="GfB-IM-fWY" eventType="touchUpInside" id="z7g-bT-tv5"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Start5MarksGame" id="Tlq-Ex-pFT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GRg-Im-XEk" firstAttribute="leading" secondItem="aai-pw-HpQ" secondAttribute="leading" id="1Dt-vJ-gOx"/>
                             <constraint firstItem="OLd-Mb-bja" firstAttribute="top" secondItem="XlN-QF-ktO" secondAttribute="top" id="3vD-X6-ixf"/>
+                            <constraint firstItem="PfX-R0-hRL" firstAttribute="top" secondItem="GRg-Im-XEk" secondAttribute="bottom" constant="-4" id="7De-1q-j5M"/>
                             <constraint firstItem="OLd-Mb-bja" firstAttribute="leading" secondItem="aai-pw-HpQ" secondAttribute="leading" id="CA9-dv-Wmb"/>
                             <constraint firstItem="OhW-vw-YuI" firstAttribute="leading" secondItem="aai-pw-HpQ" secondAttribute="leading" id="Onv-zd-Ul5"/>
                             <constraint firstItem="OhW-vw-YuI" firstAttribute="top" secondItem="aai-pw-HpQ" secondAttribute="top" constant="100" id="Ov2-GR-6Yy"/>
                             <constraint firstItem="GRg-Im-XEk" firstAttribute="top" secondItem="OhW-vw-YuI" secondAttribute="bottom" constant="40" id="SY1-go-mUg"/>
+                            <constraint firstItem="PfX-R0-hRL" firstAttribute="trailing" secondItem="aai-pw-HpQ" secondAttribute="trailing" id="b31-q1-OYl"/>
+                            <constraint firstItem="PfX-R0-hRL" firstAttribute="leading" secondItem="aai-pw-HpQ" secondAttribute="leading" id="hGZ-w4-6DS"/>
                             <constraint firstItem="aai-pw-HpQ" firstAttribute="trailing" secondItem="OhW-vw-YuI" secondAttribute="trailing" id="jDK-QO-mzc"/>
                             <constraint firstItem="aai-pw-HpQ" firstAttribute="bottom" secondItem="OLd-Mb-bja" secondAttribute="bottom" id="jQl-Q1-mAc"/>
                             <constraint firstItem="aai-pw-HpQ" firstAttribute="trailing" secondItem="OLd-Mb-bja" secondAttribute="trailing" id="nkG-GN-E4O"/>
@@ -165,6 +179,6 @@
         <image name="oboi X0" width="659" height="1135"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w24-df-uhY"/>
+        <segue reference="Tlq-Ex-pFT"/>
     </inferredMetricsTieBreakers>
 </document>

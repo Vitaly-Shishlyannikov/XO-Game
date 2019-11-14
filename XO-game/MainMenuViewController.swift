@@ -15,7 +15,12 @@ final class MainMenuViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "StartWithCompSegue"){
             guard let vc = segue.destination as? GameViewController else {return}
-            vc.gameWithComputer = true
+            vc.gameMode = .withComp
+        }
+        
+        if(segue.identifier == "Start5MarksGame"){
+            guard let vc = segue.destination as? GameViewController else {return}
+            vc.gameMode = .with5Marks
         }
     }
 }

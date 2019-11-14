@@ -17,6 +17,8 @@ public class GameboardView: UIView {
     
     public private(set) var markViewForPosition: [GameboardPosition: MarkView] = [:]
     
+    public private(set) var markViewsSet: [Player: [GameboardPosition: MarkView]] = [:]
+    
     // MARK: - Constants
     
     internal struct Constants {
@@ -40,16 +42,33 @@ public class GameboardView: UIView {
             markView.removeFromSuperview()
         }
         markViewForPosition = [:]
+        markViewsSet = [:]
     }
     
     public func canPlaceMarkView(at position: GameboardPosition) -> Bool {
         return markViewForPosition[position] == nil
     }
     
+    public func canPlaceMarkViewFor5Marks(for player: Player, at position: GameboardPosition) -> Bool {
+        return markViewsSet[player]?[position] == nil
+    }
+    
     public func placeMarkView(_ markView: MarkView, at position: GameboardPosition) {
         guard self.canPlaceMarkView(at: position) else { return }
         updateFrame(for: markView, at: position)
         markViewForPosition[position] = markView
+        addSubview(markView)
+    }
+    
+    public func addMarkToSet(for player: Player, _ markView: MarkView, at position: GameboardPosition) {
+        guard self.canPlaceMarkViewFor5Marks(for: player, at: position) else { return }
+        updateFrame(for: markView, at: position)
+    
+        if (markViewsSet.keys.contains(player)) {
+            markViewsSet[player]?[position] = markView
+        } else {
+            markViewsSet[player] = [position : markView]
+        }
         addSubview(markView)
     }
     
