@@ -12,6 +12,8 @@
 		5832FBBC237AF66100B531A1 /* LogCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832FBBB237AF66100B531A1 /* LogCommand.swift */; };
 		5832FBBE237AF7AB00B531A1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832FBBD237AF7AB00B531A1 /* Logger.swift */; };
 		5832FBC0237AF83600B531A1 /* LoggerInvoker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832FBBF237AF83600B531A1 /* LoggerInvoker.swift */; };
+		5832FBC2237C41E200B531A1 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832FBC1237C41E200B531A1 /* MainMenuViewController.swift */; };
+		5832FBC4237C464B00B531A1 /* CompInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832FBC3237C464B00B531A1 /* CompInputState.swift */; };
 		58539839237AD46E00FED8F8 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58539838237AD46E00FED8F8 /* GameState.swift */; };
 		5853983C237AD51B00FED8F8 /* PlayerInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853983B237AD51B00FED8F8 /* PlayerInputState.swift */; };
 		5853983E237ADBFF00FED8F8 /* GameEndedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853983D237ADBFF00FED8F8 /* GameEndedState.swift */; };
@@ -38,6 +40,8 @@
 		5832FBBB237AF66100B531A1 /* LogCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCommand.swift; sourceTree = "<group>"; };
 		5832FBBD237AF7AB00B531A1 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5832FBBF237AF83600B531A1 /* LoggerInvoker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerInvoker.swift; sourceTree = "<group>"; };
+		5832FBC1237C41E200B531A1 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		5832FBC3237C464B00B531A1 /* CompInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompInputState.swift; sourceTree = "<group>"; };
 		58539838237AD46E00FED8F8 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		5853983B237AD51B00FED8F8 /* PlayerInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInputState.swift; sourceTree = "<group>"; };
 		5853983D237ADBFF00FED8F8 /* GameEndedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndedState.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			children = (
 				58539838237AD46E00FED8F8 /* GameState.swift */,
 				5853983B237AD51B00FED8F8 /* PlayerInputState.swift */,
+				5832FBC3237C464B00B531A1 /* CompInputState.swift */,
 				5853983D237ADBFF00FED8F8 /* GameEndedState.swift */,
 				5853983F237AE1AD00FED8F8 /* GamePeacefulEndedState.swift */,
 			);
@@ -123,6 +128,7 @@
 				F874E4702224621100364CAE /* AppDelegate.swift */,
 				F874E4722224621100364CAE /* GameViewController.swift */,
 				F874E4F02225DFF700364CAE /* Referee.swift */,
+				5832FBC1237C41E200B531A1 /* MainMenuViewController.swift */,
 				5832FBB8237AF5BB00B531A1 /* Command */,
 				5832FBB5237AF0B400B531A1 /* Prototype */,
 				5853983A237AD4EE00FED8F8 /* State */,
@@ -240,6 +246,7 @@
 				5832FBBE237AF7AB00B531A1 /* Logger.swift in Sources */,
 				5853983E237ADBFF00FED8F8 /* GameEndedState.swift in Sources */,
 				5832FBB7237AF0D000B531A1 /* Copying.swift in Sources */,
+				5832FBC4237C464B00B531A1 /* CompInputState.swift in Sources */,
 				58539840237AE1AD00FED8F8 /* GamePeacefulEndedState.swift in Sources */,
 				5853983C237AD51B00FED8F8 /* PlayerInputState.swift in Sources */,
 				F874E4732224621100364CAE /* GameViewController.swift in Sources */,
@@ -255,6 +262,7 @@
 				58539839237AD46E00FED8F8 /* GameState.swift in Sources */,
 				5832FBBA237AF5CF00B531A1 /* LogAction.swift in Sources */,
 				F874E4DB2225C1AC00364CAE /* GameboardView.swift in Sources */,
+				5832FBC2237C41E200B531A1 /* MainMenuViewController.swift in Sources */,
 				5832FBBC237AF66100B531A1 /* LogCommand.swift in Sources */,
 				F874E4EF2225DE4500364CAE /* Player.swift in Sources */,
 			);

@@ -29,6 +29,7 @@ public class GameEndedState: GameState {
         }
         self.gameViewController?.firstPlayerTurnLabel.isHidden = true
         self.gameViewController?.secondPlayerTurnLabel.isHidden = true
+        self.gameViewController?.compTurnLabel.isHidden = true
         
         log(.gameFinished(winner: self.winner))
     }
@@ -39,6 +40,7 @@ public class GameEndedState: GameState {
         switch winner {
         case .first: return "1st player"
         case .second: return "2nd player"
+        case .comp: return "comp"
         }
     }
 }

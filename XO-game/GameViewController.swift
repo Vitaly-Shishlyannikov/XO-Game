@@ -13,9 +13,10 @@ class GameViewController: UIViewController {
     @IBOutlet var gameboardView: GameboardView!
     @IBOutlet var firstPlayerTurnLabel: UILabel!
     @IBOutlet var secondPlayerTurnLabel: UILabel!
+    @IBOutlet var compTurnLabel: UILabel!
     @IBOutlet var winnerLabel: UILabel!
     @IBOutlet var restartButton: UIButton!
-    
+
     private let gameBoard = Gameboard()
     private var currentState: GameState! {
         didSet {
@@ -24,6 +25,8 @@ class GameViewController: UIViewController {
     }
     
     private lazy var referee = Referee(gameboard: self.gameBoard)
+    
+    public var gameWithComputer = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,13 +66,39 @@ class GameViewController: UIViewController {
             return
         }
         
-        if let playerInputState = currentState as? PlayerInputState {
-            let player = playerInputState.player.next
-            self.currentState = PlayerInputState(player: player,
-                                                 markViewPrototype: player.markViewPrototype,
-                                                 gameViewController: self,
-                                                 gameBoard: gameBoard,
-                                                 gameBoardView: gameboardView)
+        if gameWithComputer {
+            
+            if currentState is PlayerInputState {
+                if let state = currentState as? PlayerInputState {
+                    let comp = state.player.nextFirstAndComp
+                    self.currentState = CompInputState(comp: comp,
+                                                       markViewPrototype: comp.markViewPrototype,
+                                                       gameViewController: self,
+                                                       gameBoard: gameBoard,
+                                                       gameBoardView: gameboardView)
+                }
+                
+            } else if currentState is CompInputState {
+            
+                if let state = currentState as? CompInputState {
+                    let player = state.comp.nextFirstAndComp
+                    self.currentState = PlayerInputState(player: player,
+                                                         markViewPrototype: player.markViewPrototype,
+                                                         gameViewController: self,
+                                                         gameBoard: gameBoard,
+                                                         gameBoardView: gameboardView)
+                }
+            }
+        } else {
+            
+            if let playerInputState = currentState as? PlayerInputState {
+                let player = playerInputState.player.next
+                self.currentState = PlayerInputState(player: player,
+                                                     markViewPrototype: player.markViewPrototype,
+                                                     gameViewController: self,
+                                                     gameBoard: gameBoard,
+                                                     gameBoardView: gameboardView)
+            }
         }
     }
 }
