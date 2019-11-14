@@ -16,7 +16,7 @@ internal final class LoggerInvoker {
     
     private let logger = Logger()
     
-    private let batchSize = 10
+    private let batchSize = 0
     
     private var commands: [LogCommand] = []
     

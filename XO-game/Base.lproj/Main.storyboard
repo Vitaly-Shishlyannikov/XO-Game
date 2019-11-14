@@ -40,6 +40,7 @@
                                 </state>
                                 <connections>
                                     <action selector="playWIthHumanBtnPressed:" destination="GfB-IM-fWY" eventType="touchUpInside" id="7YK-6v-dvx"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="w24-df-uhY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -161,4 +162,7 @@
     <resources>
         <image name="oboi X0" width="659" height="1135"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="w24-df-uhY"/>
+    </inferredMetricsTieBreakers>
 </document>

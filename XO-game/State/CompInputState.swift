@@ -33,12 +33,17 @@ public class CompInputState: GameState {
         self.gameViewController?.secondPlayerTurnLabel.isHidden = true
         self.gameViewController?.compTurnLabel.isHidden = false
         self.gameViewController?.winnerLabel.isHidden = true
+        
+        while isCompleted == false {
+            self.gameBoardView?.compMadeRandomMove()
+        }
     }
     
     public func addMark(at position: GameboardPosition) {
         guard let gameBoardView = self.gameBoardView,
-            gameBoardView.canPlaceMarkView(at: position)
-            else {return}
+              gameBoardView.canPlaceMarkView(at: position)
+            else {print("can't mark at position \(position)")
+                return}
         
         self.gameBoard?.setPlayer(self.comp, at: position)
         self.gameBoardView?.placeMarkView(self.markViewPrototype.copy(), at: position)
