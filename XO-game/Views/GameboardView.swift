@@ -45,6 +45,7 @@ public class GameboardView: UIView {
         }
         markViewForPosition = [:]
         positionsSet = [:]
+        iteratorOfMarkNumber = 0
     }
     
     public func canPlaceMarkView(at position: GameboardPosition) -> Bool {
@@ -62,9 +63,13 @@ public class GameboardView: UIView {
         addSubview(markView)
     }
     
-    public func placeMarkViewAnimated(_ markView: MarkView, at position: GameboardPosition) {
+    public func placeMarkViewWithRemoving(_ markView: MarkView, at position: GameboardPosition) {
+        if !self.canPlaceMarkView(at: position) {
+            self.removeMarkView(at: position)
+        }
         updateFrame(for: markView, at: position)
-       UIView.animate(withDuration: 1, delay: 1, options: [], animations: {self.addSubview(markView)}, completion: nil)
+        markViewForPosition[position] = markView
+        addSubview(markView)
     }
     
     public func addMarkToSet(for player: Player, _ markView: MarkView, at position: GameboardPosition) {

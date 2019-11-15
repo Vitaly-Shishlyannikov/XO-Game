@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhW-vw-YuI">
-                                <rect key="frame" x="0.0" y="120" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Игра против компьютера">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRg-Im-XEk">
-                                <rect key="frame" x="0.0" y="200" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="133" width="375" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Игра с 2 игроками">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfX-R0-hRL">
-                                <rect key="frame" x="0.0" y="236" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="207" width="375" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Игра вслепую">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,11 +59,11 @@
                         <constraints>
                             <constraint firstItem="GRg-Im-XEk" firstAttribute="leading" secondItem="aai-pw-HpQ" secondAttribute="leading" id="1Dt-vJ-gOx"/>
                             <constraint firstItem="OLd-Mb-bja" firstAttribute="top" secondItem="XlN-QF-ktO" secondAttribute="top" id="3vD-X6-ixf"/>
-                            <constraint firstItem="PfX-R0-hRL" firstAttribute="top" secondItem="GRg-Im-XEk" secondAttribute="bottom" constant="-4" id="7De-1q-j5M"/>
+                            <constraint firstItem="PfX-R0-hRL" firstAttribute="top" secondItem="GRg-Im-XEk" secondAttribute="bottom" constant="34" id="7De-1q-j5M"/>
                             <constraint firstItem="OLd-Mb-bja" firstAttribute="leading" secondItem="aai-pw-HpQ" secondAttribute="leading" id="CA9-dv-Wmb"/>
                             <constraint firstItem="OhW-vw-YuI" firstAttribute="leading" secondItem="aai-pw-HpQ" secondAttribute="leading" id="Onv-zd-Ul5"/>
-                            <constraint firstItem="OhW-vw-YuI" firstAttribute="top" secondItem="aai-pw-HpQ" secondAttribute="top" constant="100" id="Ov2-GR-6Yy"/>
-                            <constraint firstItem="GRg-Im-XEk" firstAttribute="top" secondItem="OhW-vw-YuI" secondAttribute="bottom" constant="40" id="SY1-go-mUg"/>
+                            <constraint firstItem="OhW-vw-YuI" firstAttribute="top" secondItem="aai-pw-HpQ" secondAttribute="top" constant="45" id="Ov2-GR-6Yy"/>
+                            <constraint firstItem="GRg-Im-XEk" firstAttribute="top" secondItem="OhW-vw-YuI" secondAttribute="bottom" constant="28" id="SY1-go-mUg"/>
                             <constraint firstItem="PfX-R0-hRL" firstAttribute="trailing" secondItem="aai-pw-HpQ" secondAttribute="trailing" id="b31-q1-OYl"/>
                             <constraint firstItem="PfX-R0-hRL" firstAttribute="leading" secondItem="aai-pw-HpQ" secondAttribute="leading" id="hGZ-w4-6DS"/>
                             <constraint firstItem="aai-pw-HpQ" firstAttribute="trailing" secondItem="OhW-vw-YuI" secondAttribute="trailing" id="jDK-QO-mzc"/>
@@ -137,11 +137,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Determine winner..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ury-Gt-11h">
+                                <rect key="frame" x="113.5" y="64" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FlK-xv-cci" firstAttribute="top" secondItem="LYG-3D-cJV" secondAttribute="bottom" constant="22" id="7Cg-Od-ODs"/>
                             <constraint firstItem="5M8-Sh-pRf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AYe-Ek-i4a"/>
+                            <constraint firstItem="Ury-Gt-11h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="B6A-jx-8nB"/>
                             <constraint firstItem="FlK-xv-cci" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Frx-qz-lKB"/>
                             <constraint firstItem="LYG-3D-cJV" firstAttribute="top" secondItem="5M8-Sh-pRf" secondAttribute="bottom" constant="8" id="GaF-PX-RbP"/>
                             <constraint firstItem="5M8-Sh-pRf" firstAttribute="top" secondItem="tVO-QM-pbb" secondAttribute="bottom" constant="20" id="Slq-N8-vF7"/>
@@ -152,6 +159,7 @@
                             <constraint firstItem="5M8-Sh-pRf" firstAttribute="top" secondItem="lyE-7i-9c4" secondAttribute="bottom" constant="20" id="gzs-I8-cAh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LYG-3D-cJV" secondAttribute="trailing" id="l3w-q7-ZAq"/>
                             <constraint firstItem="lyE-7i-9c4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="nrD-pT-cfQ"/>
+                            <constraint firstItem="Ury-Gt-11h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oFL-LZ-Crg"/>
                             <constraint firstItem="5M8-Sh-pRf" firstAttribute="top" secondItem="LSW-na-Of7" secondAttribute="bottom" constant="20" id="pav-Da-Sq1"/>
                             <constraint firstItem="LSW-na-Of7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="tji-xt-eHD"/>
                             <constraint firstItem="LYG-3D-cJV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tod-Ts-l8E"/>
@@ -163,6 +171,7 @@
                     </view>
                     <connections>
                         <outlet property="compTurnLabel" destination="tVO-QM-pbb" id="p6d-8l-U4H"/>
+                        <outlet property="determineLabel" destination="Ury-Gt-11h" id="qZV-Ac-Xgr"/>
                         <outlet property="firstPlayerTurnLabel" destination="lyE-7i-9c4" id="1eC-po-kqk"/>
                         <outlet property="gameboardView" destination="FpC-lq-59T" id="oJQ-bB-6DM"/>
                         <outlet property="restartButton" destination="FlK-xv-cci" id="AAG-Vv-7b0"/>
@@ -176,7 +185,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="oboi X0" width="659" height="1135"/>
+        <image name="oboi X0" width="652" height="833"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Tlq-Ex-pFT"/>

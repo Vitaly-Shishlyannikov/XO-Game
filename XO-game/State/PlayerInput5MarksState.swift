@@ -36,10 +36,12 @@ public class PlayerInput5MarksState: GameState {
             self.gameViewController?.firstPlayerTurnLabel.isHidden = false
             self.gameViewController?.secondPlayerTurnLabel.isHidden = true
             self.gameViewController?.compTurnLabel.isHidden = true
+            self.gameViewController?.determineLabel.isHidden = true
         case .second:
             self.gameViewController?.firstPlayerTurnLabel.isHidden = true
             self.gameViewController?.secondPlayerTurnLabel.isHidden = false
             self.gameViewController?.compTurnLabel.isHidden = true
+            self.gameViewController?.determineLabel.isHidden = true
         case .comp:
             return
         }
@@ -65,10 +67,10 @@ public class PlayerInput5MarksState: GameState {
                 return
             }
             
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 let subViews = gameBoardView.subviews
                 subViews.forEach {$0.removeFromSuperview()}
-//            }
+            }
         }
 //        log(.playerInput(player: self.player, position: position))
     }

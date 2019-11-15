@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
     @IBOutlet var secondPlayerTurnLabel: UILabel!
     @IBOutlet var compTurnLabel: UILabel!
     @IBOutlet var winnerLabel: UILabel!
+    @IBOutlet weak var determineLabel: UILabel!
+    
     @IBOutlet var restartButton: UIButton!
 
     private let gameBoard = Gameboard()
@@ -51,7 +53,14 @@ class GameViewController: UIViewController {
         self.gameboardView.clear()
         self.gameBoard.clear()
         
-        self.goToFirstState()
+        switch gameMode {
+        case .withHuman:
+            goToFirstState()
+        case .withComp:
+            goToFirstState()
+        case .with5Marks:
+            goTo5MarksState()
+        }
         
         log(.restartGame)
     }
@@ -74,7 +83,7 @@ class GameViewController: UIViewController {
                                              gameBoardView: gameboardView)
     }
     
-    private func checkWinner() {
+    public func checkWinner() {
         if let winner = self.referee.determineWinner() {
             self.currentState = GameEndedState(winner: winner, gameViewController: self)
             return
@@ -88,7 +97,11 @@ class GameViewController: UIViewController {
         }
     }
     
-    private func goToNextState() {
+    private func goToPeacefulState() {
+        self.currentState = GamePeacefulEndedState(gameViewController: self)
+    }
+    
+    public func goToNextState() {
         
         switch gameMode {
         case .withHuman:
@@ -156,12 +169,26 @@ class GameViewController: UIViewController {
                 }
             } else if let playerInputState = currentState as? DemoState {
                 
+                if playerInputState.needToCheckWinner {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        if let winner = self.referee.determineWinner() {
+                            self.currentState = GameEndedState(winner: winner, gameViewController: self)
+                            return
+                        } else {
+                            self.goToPeacefulState()
+                        }
+                    }
+                    return
+                }
+                
                 let player = playerInputState.player.next
                 self.currentState = DemoState(player: player,
                                               markViewPrototype: player.markViewPrototype,
                                               gameViewController: self,
                                               gameBoard: gameBoard,
                                               gameBoardView: gameboardView)
+                
+                
             }
         }
     }

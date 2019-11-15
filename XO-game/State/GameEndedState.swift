@@ -30,6 +30,7 @@ public class GameEndedState: GameState {
         self.gameViewController?.firstPlayerTurnLabel.isHidden = true
         self.gameViewController?.secondPlayerTurnLabel.isHidden = true
         self.gameViewController?.compTurnLabel.isHidden = true
+        self.gameViewController?.determineLabel.isHidden = true
         
         log(.gameFinished(winner: self.winner))
     }

@@ -25,6 +25,7 @@ public class GamePeacefulEndedState: GameState {
         self.gameViewController?.firstPlayerTurnLabel.isHidden = true
         self.gameViewController?.secondPlayerTurnLabel.isHidden = true
         self.gameViewController?.compTurnLabel.isHidden = true
+        self.gameViewController?.determineLabel.isHidden = true
         
         log(.gameFinishedWithPeace())
     }

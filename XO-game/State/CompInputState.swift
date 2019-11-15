@@ -33,6 +33,7 @@ public class CompInputState: GameState {
         self.gameViewController?.secondPlayerTurnLabel.isHidden = true
         self.gameViewController?.compTurnLabel.isHidden = false
         self.gameViewController?.winnerLabel.isHidden = true
+        self.gameViewController?.determineLabel.isHidden = true
         
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

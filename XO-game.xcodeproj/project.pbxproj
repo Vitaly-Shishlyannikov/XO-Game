@@ -136,7 +136,6 @@
 			children = (
 				F874E4702224621100364CAE /* AppDelegate.swift */,
 				F874E4722224621100364CAE /* GameViewController.swift */,
-				F874E4F02225DFF700364CAE /* Referee.swift */,
 				5832FBC1237C41E200B531A1 /* MainMenuViewController.swift */,
 				5832FBB8237AF5BB00B531A1 /* Command */,
 				5832FBB5237AF0B400B531A1 /* Prototype */,
@@ -177,6 +176,7 @@
 				F874E4F22225E0B100364CAE /* GameboardSize.swift */,
 				F874E4F42225E2CD00364CAE /* Gameboard.swift */,
 				F874E4EE2225DE4500364CAE /* Player.swift */,
+				F874E4F02225DFF700364CAE /* Referee.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
