@@ -12,6 +12,8 @@ public class PlayerInput5MarksState: GameState {
     
     public private(set) var isCompleted = false
     
+    public private(set) var allMarksAdded = false
+    
     public let player: Player
     
     private(set) weak var gameViewController: GameViewController?
@@ -51,13 +53,23 @@ public class PlayerInput5MarksState: GameState {
         self.gameBoard?.setPlayer(self.player, at: position)
         self.gameBoardView?.addMarkToSet(for: self.player, self.markViewPrototype.copy(), at: position)
         
-        if gameBoardView.markViewsSet[player]?.count == 5 {
-            self.isCompleted = true
-            let subv = gameBoardView.subviews
-            print(subv)
-            subv.forEach {$0.removeFromSuperview()}
-        }
+        if gameBoardView.positionsSet[player]?.count == 5 {
         
+            switch player {
+            case .first:
+                self.isCompleted = true
+            case .second:
+                self.isCompleted = true
+                self.allMarksAdded = true
+            case .comp:
+                return
+            }
+            
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                let subViews = gameBoardView.subviews
+                subViews.forEach {$0.removeFromSuperview()}
+//            }
+        }
 //        log(.playerInput(player: self.player, position: position))
     }
 }

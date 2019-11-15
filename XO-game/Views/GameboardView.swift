@@ -17,7 +17,9 @@ public class GameboardView: UIView {
     
     public private(set) var markViewForPosition: [GameboardPosition: MarkView] = [:]
     
-    public private(set) var markViewsSet: [Player: [GameboardPosition: MarkView]] = [:]
+    public private(set) var positionsSet: [Player: [GameboardPosition]] = [:]
+    
+    public var iteratorOfMarkNumber = 0
     
     // MARK: - Constants
     
@@ -42,7 +44,7 @@ public class GameboardView: UIView {
             markView.removeFromSuperview()
         }
         markViewForPosition = [:]
-        markViewsSet = [:]
+        positionsSet = [:]
     }
     
     public func canPlaceMarkView(at position: GameboardPosition) -> Bool {
@@ -50,7 +52,7 @@ public class GameboardView: UIView {
     }
     
     public func canPlaceMarkViewFor5Marks(for player: Player, at position: GameboardPosition) -> Bool {
-        return markViewsSet[player]?[position] == nil
+        return !(positionsSet[player]?.contains(position) ?? false)
     }
     
     public func placeMarkView(_ markView: MarkView, at position: GameboardPosition) {
@@ -60,14 +62,19 @@ public class GameboardView: UIView {
         addSubview(markView)
     }
     
+    public func placeMarkViewAnimated(_ markView: MarkView, at position: GameboardPosition) {
+        updateFrame(for: markView, at: position)
+       UIView.animate(withDuration: 1, delay: 1, options: [], animations: {self.addSubview(markView)}, completion: nil)
+    }
+    
     public func addMarkToSet(for player: Player, _ markView: MarkView, at position: GameboardPosition) {
         guard self.canPlaceMarkViewFor5Marks(for: player, at: position) else { return }
         updateFrame(for: markView, at: position)
     
-        if (markViewsSet.keys.contains(player)) {
-            markViewsSet[player]?[position] = markView
+        if (positionsSet.keys.contains(player)) {
+            positionsSet[player]?.append(position)
         } else {
-            markViewsSet[player] = [position : markView]
+            positionsSet[player] = [position]
         }
         addSubview(markView)
     }
@@ -86,6 +93,14 @@ public class GameboardView: UIView {
         let position = GameboardPosition(column: randomColumn,
                                          row: randomRow)
         onSelectPosition?(position)
+    }
+    
+    public func addSavedMark(position: GameboardPosition) {
+        onSelectPosition?(position)
+    }
+    
+    public func iterateMarkNumber() {
+        self.iteratorOfMarkNumber += 1
     }
  
     // MARK: - UIView

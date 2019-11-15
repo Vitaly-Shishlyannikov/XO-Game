@@ -134,12 +134,34 @@ class GameViewController: UIViewController {
         case .with5Marks:
             
             if let playerInputState = currentState as? PlayerInput5MarksState {
+                
+                if playerInputState.allMarksAdded {
+                    
+                        let player = playerInputState.player.next
+                        self.currentState = DemoState(player: player,
+                                                      markViewPrototype: player.markViewPrototype,
+                                                      gameViewController: self,
+                                                      gameBoard: gameBoard,
+                                                      gameBoardView: gameboardView)
+
+                    
+                } else {
+                
                 let player = playerInputState.player.next
                 self.currentState = PlayerInput5MarksState(player: player,
                                                            markViewPrototype: player.markViewPrototype,
                                                            gameViewController: self,
                                                            gameBoard: gameBoard,
                                                            gameBoardView: gameboardView)
+                }
+            } else if let playerInputState = currentState as? DemoState {
+                
+                let player = playerInputState.player.next
+                self.currentState = DemoState(player: player,
+                                              markViewPrototype: player.markViewPrototype,
+                                              gameViewController: self,
+                                              gameBoard: gameBoard,
+                                              gameBoardView: gameboardView)
             }
         }
     }
